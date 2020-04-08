@@ -19,6 +19,44 @@
                 font-size: large;
             }
 
+            .column {
+                float: left;
+                width: 49.7%;
+                height: 400px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                /* width: 500px or 50%; */
+                /* height: 300px or 50%; */
+            }
+
+            th, td {
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 13px;
+                /* font-weight: bold; */
+                color: black;
+                border: 1px solid black;
+                padding: 5px;
+            }
+
+            .floatleft {
+                width: 50%;
+                float: left;
+            }
+
+            .floatright {
+                width: 50%;
+                float: right;
+            }
         </style>
     </head>
     <body>
@@ -55,6 +93,58 @@
                 </p>
                 <p style="margin-left: 12%;">Fast forward 10 months, here I am, doing my 1st year, 2nd sem.</p>
             </p>
+        </div>
+
+        <div class="row">
+            <div class="column" style="background-color:#aaa; border: 2px solid black;">
+              <p style="margin-left: 10px; text-indent: 25%; font-size:large;">MSIT provides a 2 year, 3 semesters (6 mini-semesters) a year, post graduate IT education which emphasizes project-based curriculum.
+                This course is offered to Graduates from any stream. <br>The specialization that are provided by this organization are:
+              </p>
+              <ul style="line-height: 30px; font-weight: bold;">
+                <li>Machine Learning</li>
+                <li>Data Analytics & Data Visualization</li>
+                <li>Cyber Security</li>
+                <li>Computer Networks and Information Security</li>
+                <li>E-Business Technologies</li>
+                <li>Software Engineering</li>
+                <li>Blockchain Technologies</li>
+              </ul>
+            </div>
+
+            <div class="column" style="background-color:#bbb; border: 2px solid black;">
+                <h2 style="text-align: center; margin-top: 0px;">Courses learned and Experience</h2>
+                <div class="floatleft">
+                    <table style="margin-left: 15%;">
+                        <tr>
+                            <th style="font-weight: bolder; font-size: medium;">Course</th>
+                            <th style="font-weight: bolder; font-size: medium;">Year/Semester</th>
+                        </tr>
+                        <tr><td>Computational Thinking</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>CSPP-1 (Python)</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>Data Science</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>CSPP2 (Java)</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>Algorithms & Data Structures 1</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>Data Base & Management Systems</td><td>1st year / Sem 1</td></tr>
+                        <tr><td>Spftware Engineering Foundation</td><td>1st year / Sem 2</td></tr>
+                        <tr><td>Algorithms & Data Structures 2</td><td>1st year / Sem 2</td></tr>
+                        <tr><td>Introduction to Computer Systems</td><td>1st year / Sem 2</td></tr>
+                        <tr><td>Computer Networking</td><td>1st year / Sem 2</td></tr>
+                        <tr><td>Cyber Security</td><td>1st year / Sem 2</td></tr>
+                        <tr><td>Web Programming</td><td>1st year / Sem 2</td></tr>
+                    </table>
+                </div>
+                <div class="floatright">
+                    <h3>My Experience with courses</h3>
+                    <ol style="line-height: 30px;">
+                        <li>LxD sessions helped me learn the subject more</li>
+                        <li>Subjects taught are in sequence and goes in a flow</li>
+                        <li>Course material is clear and understandable by new learners</li>
+                        <li>Mentors/PC's are always available, who helped me whenever i was struck</li>
+                        <li>SoftSkills sessions trained me several IT industry needed skills</li>
+                        <li>Looking forward to do specialization in 2nd year</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </body>
 </html>
