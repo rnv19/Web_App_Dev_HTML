@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Webpage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body class="contact">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\logo.png" width="50" height="50" alt=""> My Website</a>
+            <!-- <a class="navbar-brand" href="#">My Website</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\myjourney.html">About me</a>
+                <a class="nav-item nav-link" href="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\projects.html">Projects</a>
+                <a class="nav-item nav-link" href="D:\MSIT\Web_App_Dev\HTML\Web_App_Dev_HTML\project0\contactme.html">Contact me</a>
+              </div>
+            </div>
+        </nav>
+        <div class="contact-container">
+          <div style="text-align:center">
+            <h2>Contact Me</h2>
+            <p>Swing by for a cup of coffee, or leave me a message:</p>
+          </div>
+          <div class="row">
+            <div class="column">
+              
+            </div>
+            <div class="contact-column">
+              <form>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="e-mail">E-mail</label>
+                <input type="text" id="email" name="email" placeholder="Your Email..">
+                <label for="Message">Message</label>
+                <textarea id="subject" name="subject" placeholder="Drop your message here..." style="height:170px"></textarea>
+                <input type="submit" value="Submit">
+              </form>
+
+              <div class="icons">
+                <!-- Connect with me.. -->
+                <button type="button" class="btn btn-tw" title="Email me"><i class="fa fa-envelope left" ></i> routulasundeep@gmail.com</button>
+                <button type="button" class="btn btn-tw" title="Call me"><i class="fa fa-phone left"></i> +91 9640926395</button>
+                <button type="button" onclick=window.open('https://github.com/rnv19','_blank') title="click me" class="btn btn-tw"><i class="fa fa-twitter left"></i> github</button>
+                <button type="button" onclick=window.open('https://www.linkedin.com/in/rnv-sundeep/','_blank') title="Click me" class="btn btn-tw"><i class="fa fa-github left"></i> LinkedIn</button>
+                <button type="button" onclick=window.open('https://www.facebook.com/sundeep.rnv/','_blank') title="Click me" class="btn btn-tw"><i class="fa fa-facebook left"></i> Facebook</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
