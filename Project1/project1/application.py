@@ -14,6 +14,9 @@ if not os.getenv("DATABASE_URL"):
 # Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config.from_envvar('APPLICATION_SETTINGS')
+# app.config['APPLICATION_SETTINGS']
+# app.config.from_pyfile('config.cfg')
 Session(app)
 
 # Set up database
@@ -21,17 +24,16 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 
-@app.route("/", methods=["POST"])
-def index():
-    name = request.form.get("name")
-    username = request.form.get("username")
-    password = request.form.get("password")
-    print(f"name is {name}")
-    print(f"username is {username}")
-    print(f"password is {password}")
-    return f"Welcome {name}"
-    
-
-@app.route("/register")
+@app.route("/register", methods=["GET","POST"])
 def register():
-    return render_template("registration.html")
+    if request.method == "GET":
+        return render_template("registration.html")
+    
+    elif request.method == "POST":
+        name = request.form.get("name")
+        username = request.form.get("username")
+        password = request.form.get("password")
+        print(f"name is {name}")
+        print(f"username is {username}")
+        print(f"password is {password}")
+        return f"Welcome {name}"
