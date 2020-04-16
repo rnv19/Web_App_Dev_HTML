@@ -8,5 +8,5 @@ class Users(db.Model):
     username = db.Column(db.String, primary_key=True)
     password = db.Column(db.String, nullable=False)
     birthday = db.Column(db.String, nullable=False)
-    gender = db.Column(db.String, nullable=False)
     address = db.Column(db.String, nullable=False)
+

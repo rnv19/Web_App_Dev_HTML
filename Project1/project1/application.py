@@ -38,10 +38,16 @@ def register():
         name = request.form.get("name")
         username = request.form.get("username")
         password = request.form.get("password")
-        print(f"name is {name}")
-        print(f"username is {username}")
-        print(f"password is {password}")
-        return f"Welcome {name}"
+        birthday = request.form.get("birthday")
+        address = request.form.get("address")
+        print(name, username, password, birthday, address)
+        user = Users(name=name, username=username, password=password, birthday=birthday, address=address)
+        try:
+            db.session.add(user)
+            db.session.commit()
+            return (f"User {name} successfully added to database...!")
+        except Exception as e:
+            return ("Exception raised! Operation was unsucessful...!")
 
 if __name__ == "__main__":
     with app.app_context():
