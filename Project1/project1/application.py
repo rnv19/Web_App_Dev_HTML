@@ -1,10 +1,11 @@
 import os
+import datetime
 from dotenv import load_dotenv
 from models import *
 
 from flask import Flask, session, render_template, request
 from flask_session import Session
-from sqlalchemy import create_engine
+from sqlalchemy import *
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask(__name__)
@@ -24,10 +25,11 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 # db = scoped_session(sessionmaker(bind=engine))
 db.init_app(app)
-# db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 def main():
     db.create_all()
+    # Users.__table__.drop(engine)
 
 @app.route("/register", methods=["GET","POST"])
 def register():
@@ -48,6 +50,13 @@ def register():
             return (f"User {name} successfully added to database...!")
         except Exception as e:
             return ("Exception raised! Operation was unsucessful...!")
+
+
+@app.route("/admin", methods=["GET"])
+def admin():
+    res = Users.query.all()
+    return render_template("admin.html", table=res)
+
 
 if __name__ == "__main__":
     with app.app_context():
