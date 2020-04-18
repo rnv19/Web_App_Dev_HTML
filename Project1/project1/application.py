@@ -1,7 +1,7 @@
 import os
 import datetime
 from dotenv import load_dotenv
-from models import *
+from models import Users
 
 from flask import Flask, session, render_template, request
 from flask_session import Session
