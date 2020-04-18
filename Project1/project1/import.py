@@ -21,10 +21,12 @@ def load_data():
     reader = csv.reader(f)
     count = 0
     for isbn, title, author, year in reader:
-        count = count + 1
+        # if (count == 5):
+            # break
         # print(type(isbn), type(title), type(author), type(year))
         book = Books(isbn = isbn, title = title, author = author, year = year)
         db.session.add(book)
+        # print(f"book with {isbn} added")
     print(count)
     db.session.commit()
 
