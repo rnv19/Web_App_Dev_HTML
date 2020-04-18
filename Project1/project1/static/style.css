@@ -65,8 +65,13 @@ label, #gender_title {
     cursor: pointer;
 } */
 
+.button_area {
+    width: 100%;
+}
+
 .button {
-    margin-left: 50%;
+    /* width: 50%; */
+    margin-left: 23%;
     background-color: rgb(44, 33, 33);
     border: none;
     color: white;
@@ -80,7 +85,12 @@ label, #gender_title {
     cursor: pointer;
     border: 2px solid #555555;
 } 
-.button4:hover {
+.submit_button:hover {
+    color: black;
+    background-color: #e7e7e7;
+}
+
+.login_button:hover {
     color: black;
     background-color: #e7e7e7;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Registration</title>
+        <title>My Webpage</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" type="text/css" href="D:\MSIT\Web_App_Dev\Project\Web_App_Dev_HTML\Project1\project1\static\style.css">
@@ -11,27 +11,26 @@
         <div class="form-container">
             <div></div>
             <div class="title">
-                <h2>Registration Info</h2>
+                <h2>Login</h2>
             </div>
             <div class="row">
                 <div class="form-column">
                     <form action="{{ url_for('register') }}" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name..">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" placeholder="Enter your new username..">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Enter your password...">
-                        <label for="password">Confirm Password</label>
-                        <input type="password" id="password" name="confirm-password" placeholder="Confirm your password...">
-                        <label for="birthday">Birthday:</label>
-                        <input type="date" id="birthday" name="birthday">
-                        <label for="address">Address</label>
-                        <textarea id="address" name="address" placeholder="Enter your address..." style="height:100px"></textarea>
-                        <div class="button_area" style="margin-left: 30%;">
-                            <button class="button submit_button" name="button" value="submit">Submit</button>
-                            <!-- <button class="button login_button" name="button" value="login">Login</button> -->
+                        <h6 style="color: white; margin-left: 17%;">If you are a new user.. please click on Register button else Login</h6>
+                        <div class="button_area">
+                            <button class="button submit_button" name="button" value="register">Register</button>
+                            <button class="button login_button" name="button" value="login">Login</button>
                         </div>
+
+                        {% if alert %}
+                            <div class="alert alert-primary" role="alert" style="margin-left: 10%; margin-top: 5%;">
+                                Username or Password are wrong....! Please enter valid username and password!!!
+                            </div>
+                        {% endif %}
                     </form>
                 </div>
             </div>
