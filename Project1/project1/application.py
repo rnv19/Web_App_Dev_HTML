@@ -80,7 +80,7 @@ def login():
 
 @app.route("/admin", methods=["GET"])
 def admin():
-    res = Users.query.all()
+    res = Users.query.order_by(Users.created_at.desc()).all()
     return render_template("admin.html", table=res)
 
 @app.route("/dropsession")
