@@ -52,7 +52,8 @@ def register():
             db.session.commit()
             return (f"User {name} successfully added to database...! + <b><a href = '/login'>click here to login</a></b>")
         except Exception as e:
-            return ("Exception raised! Operation was unsucessful...!")
+            return ("Exception raised! Operation was unsucessful...! + <b><a href = '/register'>click here to register again</a></b>"")
+
 
 @app.route("/login", methods=['POST','GET'])
 def login():
