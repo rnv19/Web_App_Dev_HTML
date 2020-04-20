@@ -15,14 +15,14 @@
             </div>
             <div class="row">
                 <div class="form-column">
-                    <form action="{{ url_for('register') }}" method="POST">
+                    <form action="" method="POST">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" placeholder="Enter your new username..">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Enter your password...">
                         <h6 style="color: white; margin-left: 17%;">If you are a new user.. please click on Register button else Login</h6>
                         <div class="button_area">
-                            <button class="button submit_button" name="button" value="register">Register</button>
+                            <button class="button submit_button" formmethod="GET" formaction= "{{ url_for('register') }}" name="button" value="register">Register</button>
                             <button class="button login_button" name="button" value="login">Login</button>
                         </div>
 
