@@ -11,9 +11,9 @@ db = SQLAlchemy(app)
 
 from models import *
 
-def main():
-    db.create_all()
-    db.session.commit()
+# def main():
+#     db.create_all()
+#     db.session.commit()
     # load_data()
 
 def load_data():
