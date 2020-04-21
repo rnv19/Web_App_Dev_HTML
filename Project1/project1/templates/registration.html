@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Webpage</title>
+        <title>Registration</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="D:\MSIT\Web_App_Dev\Project\Web_App_Dev_HTML\Project1\project1\static\style.css">
     </head>
 
     <body class="body_reg">
@@ -25,14 +26,15 @@
                         <input type="password" id="password" name="confirm-password" placeholder="Confirm your password...">
                         <label for="birthday">Birthday:</label>
                         <input type="date" id="birthday" name="birthday">
-                        <h6 id="gender_title">Select your gender</h6>
-                        <label for="male">Male</label>
-                        <input type="radio" id="male" name="gender">
-                        <label for="female">Female</label>
-                        <input type="radio" id="female" name="gender">
                         <label for="address">Address</label>
                         <textarea id="address" name="address" placeholder="Enter your address..." style="height:100px"></textarea>
-                        <button class="button button4">Submit</button>
+                        <div class="button_area" style="margin-left: 30%;">
+                            <button class="button submit_button" name="button" value="submit">Submit</button>
+                            <!-- <button class="button login_button" name="button" value="login">Login</button> -->
+                            <div style="color: white; margin-left: -60px;">
+                                <h4>Already existing user?<a style="color: white;" href="/login"> Click here to login...</a></h4>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

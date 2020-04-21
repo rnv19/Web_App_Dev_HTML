@@ -1,4 +1,4 @@
-.body_reg {
+.body_reg,.body_admin {
     background-image: url(https://wallpaperplay.com/walls/full/2/d/a/41729.jpg);
     background-size: cover;
     font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
@@ -65,8 +65,13 @@ label, #gender_title {
     cursor: pointer;
 } */
 
+.button_area {
+    width: 100%;
+}
+
 .button {
-    margin-left: 50%;
+    /* width: 50%; */
+    margin-left: 23%;
     background-color: rgb(44, 33, 33);
     border: none;
     color: white;
@@ -80,7 +85,12 @@ label, #gender_title {
     cursor: pointer;
     border: 2px solid #555555;
 } 
-.button4:hover {
+.submit_button:hover {
+    color: black;
+    background-color: #e7e7e7;
+}
+
+.login_button:hover {
     color: black;
     background-color: #e7e7e7;
 }
@@ -108,4 +118,18 @@ input[type=submit]:hover {
     width: 50%;
     margin-top: 6px;
     padding: 20px;
+}
+
+#admin_title, #admin_title1 {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.user_data {
+    font-size: large;
+    font-weight: bolder;
+    width: 60%;
+    margin-left: 20%;
+    /* margin-top: 20%; */
 }

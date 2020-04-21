@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Webpage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="D:\MSIT\Web_App_Dev\Project\Web_App_Dev_HTML\Project1\project1\static\style.css">
+    </head>
+
+    <body class="body_reg">
+        <div class="form-container">
+            <div></div>
+            <div class="title">
+                <h2>Login</h2>
+            </div>
+            <div class="row">
+                <div class="form-column">
+                    <form action="" method="POST">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your new username..">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password...">
+                        <h6 style="color: white; margin-left: 17%;">If you are a new user.. please click on Register button else Login</h6>
+                        <div class="button_area">
+                            <button class="button submit_button" formmethod="GET" formaction= "{{ url_for('register') }}" name="button" value="register">Register</button>
+                            <button class="button login_button" name="button" value="login">Login</button>
+                        </div>
+
+                        {% if alert %}
+                            <div class="alert alert-primary" role="alert" style="margin-left: 10%; margin-top: 5%;">
+                                Username or Password are wrong....! Please enter valid username and password!!!
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
