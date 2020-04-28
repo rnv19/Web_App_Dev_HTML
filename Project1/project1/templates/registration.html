@@ -4,6 +4,44 @@
         <title>My Webpage</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="D:\MSIT\Web_App_Dev\Project\Web_App_Dev_HTML\Project1\project1\static\style.css">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // document.querySelector("#submit").disabled = true
+                document.querySelector("#form").onsubmit = () => {
+                    if (document.querySelector("#username").value.length == 0) {
+                        alert("Please enter your username")
+                        return false
+                    }
+                    else if (document.querySelector("#password").value.length == 0) {
+                        alert("Please enter your password")
+                        return false
+                    }
+                    else if (!passwordValidation(document.querySelector("#password").value)) {
+                        alert("Your password must be 6 characters long, with atleast one uppercase, one lowercase, one number and one symbo")
+                        return false
+                    }
+                    else if (!emailValidation(document.querySelector("#email").value)) {
+                        alert("Please enter valid email, that should end with @xyz.com")
+                        return false
+                    }
+                }
+            });
+
+            function emailValidation(email) {
+                    var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    if (email.match(mailFormat)) {
+                        return true
+                    } else return false
+                }
+
+            function passwordValidation(password) {
+                var passFormat=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,15}$/;
+                if (password.match(passFormat)) {
+                    return true
+                }else return false
+            }
+        </script>
     </head>
 
     <body class="body_reg">
@@ -14,25 +52,16 @@
             </div>
             <div class="row">
                 <div class="form-column">
-                    <form action="{{ url_for('register') }}" method="POST">
+                    <form id="form" method="POST">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name..">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email..">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" placeholder="Enter your new username..">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Enter your password...">
-                        <label for="password">Confirm Password</label>
-                        <input type="password" id="password" name="confirm-password" placeholder="Confirm your password...">
-                        <label for="birthday">Birthday:</label>
-                        <input type="date" id="birthday" name="birthday">
-                        <h6 id="gender_title">Select your gender</h6>
-                        <label for="male">Male</label>
-                        <input type="radio" id="male" name="gender">
-                        <label for="female">Female</label>
-                        <input type="radio" id="female" name="gender">
-                        <label for="address">Address</label>
-                        <textarea id="address" name="address" placeholder="Enter your address..." style="height:100px"></textarea>
-                        <button class="button button4">Submit</button>
+                        <button id="submit" class="button button4">Submit</button>
                     </form>
                 </div>
             </div>
